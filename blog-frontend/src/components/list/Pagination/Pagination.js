@@ -6,8 +6,7 @@ import Button from  'components/common/Button';
 const cx = classNames.bind(styles);
 
 
-const Pagination = () => {
-    return (
+const Pagination = () =>(
         <div className={cx('pagination')}>
             <Button disabled>
                 이전 페이지    
@@ -19,7 +18,6 @@ const Pagination = () => {
                 다음 페이지
             </Button>            
         </div>
-    );
-};
+);
 
 export default Pagination;
