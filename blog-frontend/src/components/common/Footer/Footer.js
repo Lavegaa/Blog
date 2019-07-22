@@ -12,7 +12,7 @@ const Footer = () => {
                 reactblog
             </Link>
             <div className={cx('admin-login')}>
-                관계자 로그인
+                관리자 로그인
             </div>
         </footer>
     );
