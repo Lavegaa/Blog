@@ -1,0 +1,31 @@
+@import '../../../styles/utils.scss';
+
+.editor-template {
+    .panes {
+        height: calc(100vh - 4rem); //페이지 높이에서 EditorHeader 크기 빼기
+        display: flex;
+        background: $oc-gray-1; //임시
+        .pane {
+            display: flex;
+            flex: 1;    //임시
+        }
+        .separator {
+            width: 1rem;    //클릭 영역 넓게 설정하기 위해서
+            height: 100%;
+            position: absolute;
+            transform: translate(-50%); //자신의50%만큼 왼쪽으로 이동
+            cursor: col-resize; //리사이즈 커서
+        }
+
+        @include media("<medium") {
+            .editor {
+                flex: 1!important;
+            }
+
+            .preview, .separator {
+                display: none;
+            }
+        }
+    }
+    
+}
