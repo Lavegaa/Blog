@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-const Footer = ({onLoginClick}) => {
+const Footer = ({onLoginClick, logged}) => {
     return (
         <footer className = {cx('footer')}>
             <Link to="/" className={cx('brand')}>
                 reactblog
             </Link>
             <div className={cx('admin-login')} onClick={onLoginClick}>
-                관리자 로그인
+                {logged? '로그아웃' : '관리자 로그인'}
             </div>
         </footer>
     );

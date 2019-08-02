@@ -6,8 +6,16 @@ import * as baseActions from 'store/modules/base';
 
 class LoginModalContainer extends Component {
 
-    handleLogin = () => {
-
+    handleLogin = async () => {
+        const { BaseActions, password } = this.props;
+        try {
+            //로그인 시도
+            await BaseActions.login(password);
+            BaseActions.hideModal('login');
+            localStorage.logged = "true";
+        } catch(e) {
+            console.log(e);
+        }
     }
 
     handleCancel = () => {
@@ -16,24 +24,29 @@ class LoginModalContainer extends Component {
     }
 
     handleChange = (e) => {
-
+        const { value } = e.target;
+        const { BaseActions } = this.props;
+        BaseActions.changePasswordInput(value);
     }
 
     handleKeyPress = (e) => {
-
+        //엔터 키를 누르면 호출
+        if(e.key === 'Enter') {
+            this.handleLogin();
+        }
     }
 
     render() {
         const {
             handleCancel, handleChange, handleKeyPress, handleLogin
         } = this;
-        const { visible } = this.props;
+        const { visible, error, password } = this.props;
 
         return (
             <LoginModal
                 onLogin={handleLogin} onCancel={handleCancel}
-                onChange={handleChange} onkeypress={handleKeyPress}
-                visible={visible} 
+                onChange={handleChange} onKeypress={handleKeyPress}
+                visible={visible} error={error} password={password}
             />
         );
     }
@@ -41,7 +54,9 @@ class LoginModalContainer extends Component {
 
 export default connect(
     (state) => ({
-        visible: state.base.getIn(['modal', 'login'])
+        visible: state.base.getIn(['modal', 'login']),
+        password: state.base.getIn(['loginModal', 'password']),
+        error: state.base.getIn(['loginModal', 'error'])
     }),
     (dispatch) => ({
         BaseActions: bindActionCreators(baseActions, dispatch)
