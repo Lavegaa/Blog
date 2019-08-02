@@ -12,11 +12,13 @@
 
 @keyframes slideUp {
     0% { transform: translateY(50vh);}
+    50% { transform: translateY(25vh); }
     100% {transform: translateY(0);}
 }
 
 @keyframes slideDown {
     0% { transform: translateY(0);}
+    50% { transform: translateY(25vh); }
     100% {transform: translateY(50vh);}
 }
 
