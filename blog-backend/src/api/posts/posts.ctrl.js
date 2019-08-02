@@ -15,6 +15,14 @@ exports.checkObjectId = (ctx, next) =>{
     return next();  //next를 리턴해야 ctx.body가 제대로 설정됨.
 };
 
+exports.checkLogin = (ctx, next) => {
+    if(!ctx.session.logged) {
+        ctx.status = 401;   //Unathorized
+        return null;
+    }
+    return next();
+}
+
 /*
     포스트 작성
     POST /api/posts

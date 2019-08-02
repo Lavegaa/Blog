@@ -41,7 +41,7 @@ const sessionConfig = {
 }
 
 app.use(session(sessionConfig, app));
-app.key = [signKey];
+app.keys = [signKey];
 
 //app인스턴스에 라우터 적용
 app.use(router.routes()).use(router.allowedMethods());
