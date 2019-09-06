@@ -8,11 +8,11 @@ class FooterContainer extends Component {
 
     handleLoginClick = async () => {
         const { BaseActions, logged } = this.props;
-        if(logged) {
+        if (logged) {
             try {
                 await BaseActions.logout();
                 window.location.reload();
-            } catch(e) {
+            } catch (e) {
                 console.log(e);
             }
             return;
@@ -20,13 +20,13 @@ class FooterContainer extends Component {
         BaseActions.showModal('login');
         BaseActions.initializeLoginModal();
     }
-    
+
     render() {
         const { handleLoginClick } = this;
-        const { logged } =this.props;
+        const { logged } = this.props;
 
         return (
-            <Footer onLoginClick={handleLoginClick} logged={logged}/>
+            <Footer onLoginClick={handleLoginClick} logged={logged} />
         );
     }
 }

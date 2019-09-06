@@ -33,7 +33,7 @@ const initialState = Map({
     //모달의 가시성 상태
     modal: Map({
         remove: false,
-        login: false    
+        login: false
     }),
     loginModal: Map({
         password: '',
@@ -59,7 +59,7 @@ export default handleActions({
         },
         onError: (state, action) => {   //오류가 발생 할 때
             return state.setIn(['loginModal', 'error'], true)
-                        .setIn(['loginModal', 'password'], '');
+                .setIn(['loginModal', 'password'], '');
         }
     }),
     ...pender({
@@ -81,4 +81,4 @@ export default handleActions({
         return state.set('logged', true);
     }
 
-},initialState);
+}, initialState);
