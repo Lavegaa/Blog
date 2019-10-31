@@ -1,8 +1,8 @@
 # Blog
 
 본 프로젝트는 Velopert님의 강좌를 보고 제작했다.  
-React 기반으로 제작한 블로그다. 마크다운 문법을 사용해 게시물을 구조적으로 작성 할 수 있다.
-
+React 기반으로 제작한 블로그다. 마크다운 문법을 사용해 게시물을 구조적으로 작성 할 수 있다.  
+##에디터
 ![editor](https://user-images.githubusercontent.com/34911173/67914400-57219280-fbd3-11e9-8c71-48959ee6feaf.PNG)
 
 # 빠른 시작
