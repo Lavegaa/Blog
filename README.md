@@ -46,6 +46,6 @@ yarn
 - marked
 - prismjs
 - remove-markdown
-> Backend의 포트(4000)와 Frontend의 포트(3000)가 달라 proxy를 통해 접속했습니다.
+> Backend의 포트(4000)와 Frontend의 포트(3000)가 달라 proxy를 통해 접속했다.
 
 
