@@ -12,7 +12,7 @@ const Header = ({postId, logged, onRemove}) => (
                 <div className={cx('brand')}>
                     <Link to="/">reactblog</Link>
                 </div>
-                { logged && <div className={cx('right')}>
+                <div className={cx('right')}>
                     {
                         //flex를 유지하려고 배열 형태로 렌더링 합니다.
                         postId && [
@@ -21,7 +21,7 @@ const Header = ({postId, logged, onRemove}) => (
                         ]
                     }
                     <Button theme="outline"to="/editor">새 포스트</Button>
-                </div> }
+                </div> 
             </div>
         </header>
 );
