@@ -1,22 +1,33 @@
 import React from "react";
-// import { Switch, Route } from "react-router-dom";
-// import { ListPage, PostPage, EditorPage, NotFoundPage } from "pages";
-// import Base from "containers/common/Base";
+import styled from 'styled-components';
+import EditorPage from "../pages/EditorPage";
+
+const Wrapper = styled.div`
+  body{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  // box-sizing 일괄 설정
+  *{
+    box-sizing:  inherit;
+  }
+
+  //링크 스타일 밑줄 및 색상 무효화
+  a{
+    text-decoration: inherit;
+    color: inherit;
+  }
+`;
 
 const App = () => {
   return (
-    <div>
-      hello world
-      {/* <Switch>
-        <Route exact path='/' component={ListPage} />
-        <Route path='/page/:page' component={ListPage} />
-        <Route path='/tag/:tag/:page?' component={ListPage} />
-        <Route path='/post/:id' component={PostPage} />
-        <Route path='/editor' component={EditorPage} />
-        <Route component={NotFoundPage} />
-      </Switch>
-      <Base /> */}
-    </div>
+    <Wrapper>
+      <EditorPage />
+    </Wrapper>
   );
 };
 

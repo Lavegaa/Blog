@@ -44,13 +44,12 @@ module.exports = {
         },
       },
       {
-        test: /\.scss$/,
+        test: /\.scss|\.css$/,
         use: [
           'style-loader', // creates style nodes from JS strings
           'css-loader', // translates CSS into CommonJS
           'sass-loader', // compiles Sass to CSS, using Node Sass by default
         ],
-        exclude: /node_modules/,
       },
       {
         test: /\.(js|jsx)$/,
@@ -74,6 +73,12 @@ module.exports = {
   },
 
   resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
+      '@store': path.resolve(__dirname, 'src/store'),
+      '@containers': path.resolve(__dirname, 'src/containers'),
+    },
     extensions: ['.js', '.jsx'],
   },
 
